@@ -1,0 +1,24 @@
+
+.detailsWithoutHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fromInput{
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.searchInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.searchInput > button {
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
