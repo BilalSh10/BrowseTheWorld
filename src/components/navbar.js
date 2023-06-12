@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './navbar.css';
+import {MdOutlineHelpOutline} from 'react-icons/md';
 
 export default function Navbar(props){
 
-    // const [title, setTitle] = useState("");
     const [areaCountry, setAreaCountry] = useState(null);
     const [areaClicked, setAreaClicked] = useState(false);
     const [popClicked, setPopClicked] = useState(false);
+    const [helpClicked, setHelpClicked] = useState(false);
     const [populationCountry, setPopulationCountry] = useState(null);
 
     useEffect(() => {
@@ -78,6 +79,10 @@ export default function Navbar(props){
         setPopClicked(!popClicked)
     }
     
+    let ShowHelpSection = () => {
+        setHelpClicked(!helpClicked)
+       props.helpState(helpClicked)
+    }
 
  return (
   <div className="heading">
@@ -85,6 +90,7 @@ export default function Navbar(props){
     <div>
         <button onClick={getLargestArea}>Show the largest Countries by area </button>
         <button onClick={getLargestPopulation}>Show the largest Countries by population</button>
+        <button onClick={ShowHelpSection}><MdOutlineHelpOutline size={25}/> Help</button>
     </div>
   </div>
  );

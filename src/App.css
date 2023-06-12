@@ -8,6 +8,15 @@
   height: calc(100vh - 77px);
 }
 
+.helpSection{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid black;
+}
+
 .pinContainer > p {
   display: flex;
   flex-direction: row;

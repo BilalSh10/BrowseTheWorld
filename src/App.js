@@ -27,6 +27,7 @@ function App() {
   const [allInfo, setAllInfo] = useState(null);
   const [allAirports, setAllAirports] = useState(null);
   const [allFlights, setAllFlights] = useState(null);
+  const [helpClicked, setHelpClicked] = useState(false);
   const [countryCode, setCountryCode] = useState('');
   const [fromCountryCode, setFromCountryCode] = useState('');
   const [makeSearch, setMakeSearch] = useState(false)
@@ -122,7 +123,7 @@ function App() {
 
   return (
     <div className="App">
-        <Navbar area={setAreaState} population={setPopulationState}/>
+        <Navbar area={setAreaState} population={setPopulationState} helpState={setHelpClicked}/>
         <div className='detailsContainer'>
           <Map mapLib={maplibregl} 
             initialViewState={{
@@ -185,6 +186,17 @@ function App() {
               <button onClick={() => {setWasClicked(false); setMakeSearch(false); setAllFlights(null)}}>Cancel</button>
             </div>
           )}
+
+          {helpClicked ? 
+            <div className='helpSection'>
+              <h2>How To use The Website</h2>
+              <p>You can use our website by <b>clicking</b> on the map, when u click on it, it will show the details about the clicked country,
+               then u will see a button for more information about the country.</p>
+            </div> 
+            : 
+            <></>
+          }
+
         </div>
 
             <div className='flightsContainer'>
