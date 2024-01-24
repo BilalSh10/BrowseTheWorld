@@ -133,7 +133,7 @@ function App() {
               zoom: 14
             }}
             style={{width: "100%", height: " calc(100vh - 77px)"}}
-            mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=MqBRk7cB15al80D4sxeL`}
+            mapStyle={`https://api.maptiler.com/maps/basic/style.json?key=MqBRk7cB15al80D4sxeL`}
             onClick={GetCountry}
           >
             <NavigationControl position="top-left" />
