@@ -77,7 +77,7 @@ function App() {
     try {
       response = await axios.get(`https://countryapi.io/api/name/${countryName}`, {
         headers: {
-          Authorization: 'Bearer GA3Fd7mWrjeAaWx8KDIaECRRhaOuAFxUEDYm3WQ5',
+          Authorization: `Bearer GA3Fd7mWrjeAaWx8KDIaECRRhaOuAFxUEDYm3WQ5`,
         },
       });
     } catch (error) {
@@ -120,6 +120,7 @@ function App() {
     }
   }
 
+  //#-0.1/-5.93794/150.86761
 
   return (
     <div className="App">
@@ -132,7 +133,7 @@ function App() {
               zoom: 14
             }}
             style={{width: "100%", height: " calc(100vh - 77px)"}}
-            mapStyle="https://api.maptiler.com/maps/streets/style.json?key=MqBRk7cB15al80D4sxeL#-0.1/-5.93794/150.86761"
+            mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=MqBRk7cB15al80D4sxeL`}
             onClick={GetCountry}
           >
             <NavigationControl position="top-left" />
