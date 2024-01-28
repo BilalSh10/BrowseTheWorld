@@ -38,6 +38,7 @@ function App() {
     }
   }, [makeSearch, fromCountryCode]);
 
+
   let getAirports = (cn) => {
     let AirportsObject = [];
     for (let airportdetails of Airports){
@@ -119,8 +120,6 @@ function App() {
       console.error(error);
     }
   }
-
-  //#-0.1/-5.93794/150.86761
 
   return (
     <div className="App">
