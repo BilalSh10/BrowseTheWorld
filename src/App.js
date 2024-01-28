@@ -56,7 +56,7 @@ function App() {
   let GetCountry = async (event) => {     
     let latitude = event.lngLat.lat;
     let longitude = event.lngLat.lng;
-    let response = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=26f94121ac184dc283107698ea6443fb`);
+    let response = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_COUNTRY_DETAILS_API_KEY}`);
     setCountryName(response.data.results[0].components.country);
     let cn = response.data.results[0].components.country_code;
     setFromCountryCode(cn);
@@ -78,7 +78,7 @@ function App() {
     try {
       response = await axios.get(`https://countryapi.io/api/name/${countryName}`, {
         headers: {
-          Authorization: `Bearer GA3Fd7mWrjeAaWx8KDIaECRRhaOuAFxUEDYm3WQ5`,
+          Authorization: `Bearer ${process.env.REACT_APP_COUNTRY_API_KEY}`,
         },
       });
     } catch (error) {
@@ -132,7 +132,7 @@ function App() {
               zoom: 14
             }}
             style={{width: "100%", height: " calc(100vh - 77px)"}}
-            mapStyle={`https://api.maptiler.com/maps/basic/style.json?key=MqBRk7cB15al80D4sxeL`}
+            mapStyle={`https://api.maptiler.com/maps/basic/style.json?key=${process.env.REACT_APP_MAP_API_KEY}`}
             onClick={GetCountry}
           >
             <NavigationControl position="top-left" />
